@@ -1,0 +1,20 @@
+function getComputerChoice() {
+    // randomly returns either R P or S
+    // randomly choose a value between 0 and 2
+    // use math.random to get that number
+    // assign number to each selection (0 is R, 1 is P and 2 is S)
+    // output or return the chosen random selection
+}
+
+function playRound(computerSelection, userSelection) {
+    // compare two selections
+    // RETURN string that says who winner and loser is, don't console.log()
+    // "You Lose! Paper Beats Rock!"
+    // should be case insensitive
+}
+
+function game() {
+    // loop through a 5 round game (five round for loop, calling playRound each time)
+    // console.log() the results of each round and the winner at the end
+    // use prompt() to get the input from the user and store that in a variable
+}
