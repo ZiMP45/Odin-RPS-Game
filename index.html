@@ -26,19 +26,21 @@
             const outcome1 = "Computer Wins! Too Bad!";
             const outcome2 = "You Win! Celebration!";
             const outcome3 = "Tie Game! Try again maybe you'll have better luck";
+            let comp = computerSelection.toUpperCase();
+            let user = userSelection.toUpperCase();
 
-            if (computerSelection == "Rock" && userSelection == "Scissors") {
+            if (comp == "ROCK" && userSelection == "SCISSORS") {
                 return outcome1;
                 return;
-            } else if (computerSelection == "Scissors" && userSelection == "Paper") {
+            } else if (comp == "SCISSORS" && user == "PAPER") {
                 return outcome1;
-            } else if (computerSelection == "Paper" && userSelection == "Rock") {
+            } else if (comp == "PAPER" && user == "ROCK") {
                 return outcome1;
-            } else if (computerSelection == "Scissors" && userSelection == "Rock") {
+            } else if (comp == "SCISSORS" && user == "ROCK") {
                 return outcome2;
-            } else if (computerSelection == "Paper" && userSelection == "Scissors") {
+            } else if (comp == "PAPER" && user == "SCISSORS") {
                 return outcome2;
-            } else if (computerSelection == "Rock" && userSelection == "Paper") {
+            } else if (comp == "ROCK" && user == "PAPER") {
                 return outcome2;
             } else {
                 return outcome3;
@@ -47,7 +49,7 @@
 
         const userSelection = "Rock";
         const computerSelection = getComputerChoice();
-        console.log(playRound(userSelection, getComputerChoice()));
+        console.log(playRound(computerSelection, userSelection));
     </script>
         
 </body>
