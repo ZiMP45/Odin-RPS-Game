@@ -60,7 +60,10 @@
         // console.log(playRound(computerSelection, userSelection));
 
         function game() {
-            return;
+            // window prompt user for their selection
+            let selection = window.prompt("What is your choice?", "Rock, Paper, or Scissors");
+            const computerSelection = getComputerChoice();
+            console.log(playRound(computerSelection, selection));
         }
     </script>
         
