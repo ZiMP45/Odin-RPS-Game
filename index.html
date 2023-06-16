@@ -44,11 +44,13 @@
                 return outcome1;
             } else if (comp == "PAPER" && user == "ROCK") {
                 return outcome1;
-            } else if (comp == "SCISSORS" && user == "ROCK") {
+            } else if (comp == "ROCK" && user == "SCISSORS") {
                 return outcome2;
             } else if (comp == "PAPER" && user == "SCISSORS") {
                 return outcome2;
             } else if (comp == "ROCK" && user == "PAPER") {
+                return outcome2;
+            } else if (comp == "SCISSORS" && user == "ROCK") {
                 return outcome2;
             } else {
                 return outcome3;
@@ -61,10 +63,28 @@
 
         function game() {
             // window prompt user for their selection
-            let selection = window.prompt("What is your choice?", "Rock, Paper, or Scissors");
             const computerSelection = getComputerChoice();
-            console.log(playRound(computerSelection, selection));
+            let computerScore = 0;
+            let userScore = 0;
+
+            for (let i = 0; i < 5; i++) {  
+                let selection = prompt("What is your choice?", "Rock, Paper, or Scissors");
+
+                if (playRound(computerSelection, selection) == "Computer Wins! Too Bad!") {
+                    computerScore++;
+                } else if (playRound(computerSelection, selection) == "You Win! Celebration!") {
+                    userScore++;
+                }
+            }
+
+            if (computerScore > userScore) {
+                console.log("You win!!");
+            } else if (computerScore < userScore) {
+                console.log("Computer wins...");
+            }
         }
+
+        game();
     </script>
         
 </body>
