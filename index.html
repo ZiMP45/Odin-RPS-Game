@@ -7,10 +7,14 @@
 </head>
 <body>
     <script>
+
+        // function to get random choice for computer
         function getComputerChoice() {
+            // gets random value between 0 and 3
             let value = (Math.floor(Math.random() * 3));
             let choice;
 
+            // assign string value based on random number given
             if (value === 0) {
                 choice = 'Rock';
             } else if (value === 1) {
@@ -22,13 +26,17 @@
             return choice;
         }
 
+        // function to compare selections between computer and user and output winner statement
         function playRound(computerSelection, userSelection) {
+            // outcome cases
             const outcome1 = "Computer Wins! Too Bad!";
             const outcome2 = "You Win! Celebration!";
             const outcome3 = "Tie Game! Try again maybe you'll have better luck";
+            // adjust for cases, send everything to uppercase
             let comp = computerSelection.toUpperCase();
             let user = userSelection.toUpperCase();
 
+            // all options for Rock, Paper, Scissors game. Tie cases are redundant.
             if (comp == "ROCK" && userSelection == "SCISSORS") {
                 return outcome1;
                 return;
@@ -46,10 +54,14 @@
                 return outcome3;
             }
         }
+        // test for playRound() function
+        // const userSelection = "Rock";
+        // const computerSelection = getComputerChoice();
+        // console.log(playRound(computerSelection, userSelection));
 
-        const userSelection = "Rock";
-        const computerSelection = getComputerChoice();
-        console.log(playRound(computerSelection, userSelection));
+        function game() {
+            return;
+        }
     </script>
         
 </body>
