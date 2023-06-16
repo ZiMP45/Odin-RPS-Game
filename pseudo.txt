@@ -11,10 +11,23 @@ function playRound(computerSelection, userSelection) {
     // RETURN string that says who winner and loser is, don't console.log()
     // "You Lose! Paper Beats Rock!"
     // should be case insensitive
+
+    // prompt for user selections
+    // if choice = rock and user = Scissors
+        // return "string"
+    // else if scissors and Paper  
+        // returnm string
+
 }
 
 function game() {
     // loop through a 5 round game (five round for loop, calling playRound each time)
     // console.log() the results of each round and the winner at the end
     // use prompt() to get the input from the user and store that in a variable
+    //
+    // declaration x2 for scores (computer and user)
+    // for loop x5
+        // call getComputerChoice()
+        // if R vs P, increment counter for winner, same cases for PvS, SvR
+    // return scores 
 }

@@ -21,15 +21,24 @@
 
             return choice;
         }
-        // if (getComputerChoice() === 0) {
-        //     console.log('Rock');
-        // } else if (getComputerChoice() === 1) {
-        //     console.log('Paper');
-        // } else {
-        //     console.log('Scissors');
-        // }
 
-        console.log(getComputerChoice());
+        const userSelection = "Rock";
+        const computerSelection = getComputerChoice();
+        console.log(computerSelection);
+
+        function playRound(computerSelection, userSelection) {
+            if (computerSelection == "Paper" && userSelection == "Rock") {
+                console.log("Computer Wins");
+            } else if (computerSelection == "Scissors" && userSelection == "Paper") {
+                console.log("Computer Wins");
+            } else if (computerSelection == "Rock" && userSelection == "Scissors") {
+                console.log("Computer Wins");
+            } else {
+                console.log("Please make a selection")
+            }
+        }
+
+        
     </script>
         
 </body>
