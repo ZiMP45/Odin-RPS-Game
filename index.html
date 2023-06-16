@@ -22,33 +22,32 @@
             return choice;
         }
 
-        const userSelection = "Rock";
-        const computerSelection = getComputerChoice();
-        console.log(computerSelection);
-
         function playRound(computerSelection, userSelection) {
             const outcome1 = "Computer Wins! Too Bad!";
             const outcome2 = "You Win! Celebration!";
             const outcome3 = "Tie Game! Try again maybe you'll have better luck";
 
             if (computerSelection == "Rock" && userSelection == "Scissors") {
-                console.log(outcome1);
+                return outcome1;
+                return;
             } else if (computerSelection == "Scissors" && userSelection == "Paper") {
-                console.log(outcome1);
+                return outcome1;
             } else if (computerSelection == "Paper" && userSelection == "Rock") {
-                console.log(outcome1);
+                return outcome1;
             } else if (computerSelection == "Scissors" && userSelection == "Rock") {
-                console.log(outcome2);
+                return outcome2;
             } else if (computerSelection == "Paper" && userSelection == "Scissors") {
-                console.log(outcome2);
+                return outcome2;
             } else if (computerSelection == "Rock" && userSelection == "Paper") {
-                console.log(outcome2);
+                return outcome2;
             } else {
-                console.log(outcome3);
+                return outcome3;
             }
         }
 
-        
+        const userSelection = "Rock";
+        const computerSelection = getComputerChoice();
+        console.log(playRound(userSelection, getComputerChoice()));
     </script>
         
 </body>
