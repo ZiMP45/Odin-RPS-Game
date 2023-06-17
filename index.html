@@ -68,7 +68,7 @@
             let userScore = 0;
 
             for (let i = 0; i < 5; i++) {  
-                let selection = prompt("What is your choice?", "Rock, Paper, or Scissors");
+                let selection = prompt("What is your choice?");
 
                 if (playRound(computerSelection, selection) == "Computer Wins! Too Bad!") {
                     computerScore++;
@@ -77,6 +77,7 @@
                 }
             }
 
+            //compare initial scores to see if win or lose
             if (computerScore < userScore) {
                 alert("You win!!");
             } else if (computerScore > userScore) {
@@ -84,8 +85,10 @@
             } else if (computerScore == userScore) {
                 alert("Hmm.. a tie.");
                 alert("Let's try one more for a tie break.")
-                
-                let tieBreak = prompt("What is your choice?", "Rock, Paper, or Scissors");
+
+            // additional case in case of tie break, initialize new variable and
+            // run through one more winner take all round. 
+                let tieBreak = prompt("What is your choice?");
                 if (playRound(computerSelection, tieBreak) == "Computer Wins! Too Bad!") {
                     alert("It's official... The computer is better than you!!");
                 } else if (playRound(computerSelection, tieBreak) == "You Win! Celebration!") {
