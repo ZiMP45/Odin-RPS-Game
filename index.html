@@ -77,10 +77,20 @@
                 }
             }
 
-            if (computerScore > userScore) {
-                console.log("You win!!");
-            } else if (computerScore < userScore) {
-                console.log("Computer wins...");
+            if (computerScore < userScore) {
+                alert("You win!!");
+            } else if (computerScore > userScore) {
+                alert("Computer wins...");
+            } else if (computerScore == userScore) {
+                alert("Hmm.. a tie.");
+                alert("Let's try one more for a tie break.")
+                
+                let tieBreak = prompt("What is your choice?", "Rock, Paper, or Scissors");
+                if (playRound(computerSelection, tieBreak) == "Computer Wins! Too Bad!") {
+                    alert("It's official... The computer is better than you!!");
+                } else if (playRound(computerSelection, tieBreak) == "You Win! Celebration!") {
+                    alert("You're officially a badass and beat a machine!");
+                }
             }
         }
 
