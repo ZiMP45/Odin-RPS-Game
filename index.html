@@ -6,99 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
 
-        // function to get random choice for computer
-        function getComputerChoice() {
-            // gets random value between 0 and 3
-            let value = (Math.floor(Math.random() * 3));
-            let choice;
+    <input type="button" value="Rock"></input>
+    <input type="button" value="Paper"></input>
+    <input type="button" value="Scissors"></input>
 
-            // assign string value based on random number given
-            if (value === 0) {
-                choice = 'Rock';
-            } else if (value === 1) {
-                choice = 'Paper';
-            } else {
-                choice = 'Scissors';
-            }
-
-            return choice;
-        }
-
-        // function to compare selections between computer and user and output winner statement
-        function playRound(computerSelection, userSelection) {
-            // outcome cases
-            const outcome1 = "Computer Wins! Too Bad!";
-            const outcome2 = "You Win! Celebration!";
-            const outcome3 = "Tie Game! Try again maybe you'll have better luck";
-            // adjust for cases, send everything to uppercase
-            let comp = computerSelection.toUpperCase();
-            let user = userSelection.toUpperCase();
-
-            // all options for Rock, Paper, Scissors game. Tie cases are redundant.
-            if (comp == "ROCK" && userSelection == "SCISSORS") {
-                return outcome1;
-                return;
-            } else if (comp == "SCISSORS" && user == "PAPER") {
-                return outcome1;
-            } else if (comp == "PAPER" && user == "ROCK") {
-                return outcome1;
-            } else if (comp == "ROCK" && user == "SCISSORS") {
-                return outcome2;
-            } else if (comp == "PAPER" && user == "SCISSORS") {
-                return outcome2;
-            } else if (comp == "ROCK" && user == "PAPER") {
-                return outcome2;
-            } else if (comp == "SCISSORS" && user == "ROCK") {
-                return outcome2;
-            } else {
-                return outcome3;
-            }
-        }
-        // test for playRound() function
-        // const userSelection = "Rock";
-        // const computerSelection = getComputerChoice();
-        // console.log(playRound(computerSelection, userSelection));
-
-        function game() {
-            // window prompt user for their selection
-            const computerSelection = getComputerChoice();
-            let computerScore = 0;
-            let userScore = 0;
-
-            for (let i = 0; i < 5; i++) {  
-                let selection = prompt("What is your choice?");
-
-                if (playRound(computerSelection, selection) == "Computer Wins! Too Bad!") {
-                    computerScore++;
-                } else if (playRound(computerSelection, selection) == "You Win! Celebration!") {
-                    userScore++;
-                }
-            }
-
-            //compare initial scores to see if win or lose
-            if (computerScore < userScore) {
-                alert("You win!!");
-            } else if (computerScore > userScore) {
-                alert("Computer wins...");
-            } else if (computerScore == userScore) {
-                alert("Hmm.. a tie.");
-                alert("Let's try one more for a tie break.")
-
-            // additional case in case of tie break, initialize new variable and
-            // run through one more winner take all round. 
-                let tieBreak = prompt("What is your choice?");
-                if (playRound(computerSelection, tieBreak) == "Computer Wins! Too Bad!") {
-                    alert("It's official... The computer is better than you!!");
-                } else if (playRound(computerSelection, tieBreak) == "You Win! Celebration!") {
-                    alert("You're officially a badass and beat a machine!");
-                }
-            }
-        }
-
-        game();
-    </script>
+    <script src="script.js"></script>
         
 </body>
 </html>
