@@ -1,0 +1,30 @@
+* {
+    border: 1px solid black;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    
+}
+
+.selection {
+    text-align: center;
+    justify-content: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    padding: auto;
+}
+
+button {
+    text-align: center;
+    justify-content: center;
+    width: 75px;
+    height: 75px;
+    margin: 24px;
+}
