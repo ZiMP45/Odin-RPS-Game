@@ -51,11 +51,19 @@ function playRound(playerSelection, computerSelection) {
 // also checks if the player or computer already has 5 points and if so, they win.
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        console.log(playRound(button.value, computerSelection));
+        alert(playRound(button.value, computerSelection));
         if (playerScore == 5) {
+            disableButtons();
             alert("You won the game!");
         } else if (computerScore == 5) {
+            disableButtons();
             alert("Ha! I win the game!");
         }
     });
 });
+
+ function disableButtons () {
+    document.getElementById('rock').disabled = true;
+    document.getElementById('paper').disabled = true;
+    document.getElementById('scissors').disabled = true;
+ }
