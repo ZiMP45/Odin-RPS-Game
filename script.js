@@ -1,58 +1,59 @@
 let playerScore = 0;
 let computerScore = 0;
-const button = document.querySelector('input');
+let round = 0;
+let computerSelection = getComputerChoice();
+const buttons = document.querySelectorAll('button');
 
 // function to get random choice for computer
 function getComputerChoice() {
 
-// gets random value between 0 and 3
-let value = (Math.floor(Math.random() * 3));
+    // gets random value between 0 and 3
+    let value = (Math.floor(Math.random() * 3));
 
-switch (value) {
-    case 0:
-        return 'ROCK'
-    case 1:
-        return 'PAPER'
-    case 2:
-        return 'SCISSORS'
-}
-}
-
-// function to compare selections between computer and user and output winner statement
-function playRound(playerSelection) {
-
-let computerSelection = getComputerChoice();
-let result = "";
-
-const outcome1 = "Computer Wins! Too Bad!";
-const outcome2 = "You Win! Celebration!";
-const outcome3 = "Tie Game! Try again maybe you'll have better luck";
-
-if ((playerSelection == 'rock' && computerSelection == 'scissors') ||
-    (playerSelection == 'scissors' && computerSelection == 'paper') ||
-    (playerSelection == 'paper' && computerSelection == 'rock')) {
-        
-        playerScore += 1;
-        result = outcome2;
-
-        if (playerScore == 5) {
-            result += '<br><br>You won the game! Reload the page to play again';
-        }
-    } else if (playerSelection == computerSelection) {
-        result = outcome3 + " You both chose: " + playerSelection + "<br><br>Player score: " +
-        "<br>Computer Score: " + computerScore;
-    } else {
-        computerScore += 1;
-        result = outcome1 + " " + computerSelection + " beats " + playerSelection + "<br><br>Player score: " +
-        playerScore + "<br>Computer Score: " + computerScore;
-
-        if (computerScore == 5) {
-            result += "<br><br>I won the game! Reload the page to play again";
-        }
+    switch (value) {
+        case 0:
+            return 'ROCK'
+        case 1:
+            return 'PAPER'
+        case 2:
+            return 'SCISSORS'
     }
 }
 
-button.addEventListener('click', function() {
-    playRound(button.value);
-});
+// function to compare selections between computer and user and output winner statement
+function playRound(playerSelection, computerSelection) {
+    let roundResult = "";
 
+    if ((playerSelection == 'ROCK' && computerSelection == 'SCISSORS') ||
+        (playerSelection == 'SCISSORS' && computerSelection == 'PAPER') ||
+        (playerSelection == 'PAPER' && computerSelection == 'ROCK')) {
+        
+        playerScore += 1;
+        round += 1;
+        roundResult += "You win this round! I bet you can't do that again! Player score: " + 
+        playerScore + " Computer score: " + computerScore;
+
+    } else if (playerSelection == computerSelection) {
+        round += 1;
+        roundResult = "Tie game, You both chose: " + playerSelection + " Player score: " + 
+        playerScore + " Computer Score: " + computerScore;
+    } else {
+        computerScore += 1;
+        round += 1;
+        roundResult = "Ha! I win! " + computerSelection + " beats " + playerSelection + 
+        " Player score: " + playerScore + " Computer Score: " + computerScore;
+    }
+
+    return roundResult;
+}
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        console.log(playRound(button.value, computerSelection));
+        if (playerScore == 5) {
+            alert("You won the game!");
+        } else if (computerScore == 5) {
+            alert("Ha! I win the game!");
+        }
+    });
+});
