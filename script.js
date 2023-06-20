@@ -47,6 +47,8 @@ function playRound(playerSelection, computerSelection) {
     return roundResult;
 }
 
+// event listener for three button choices
+// also checks if the player or computer already has 5 points and if so, they win.
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         console.log(playRound(button.value, computerSelection));
