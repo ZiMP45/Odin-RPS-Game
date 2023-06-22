@@ -1,6 +1,6 @@
-* {
+/* * {
     border: 1px solid black;
-}
+} */
 
 body {
     display: flex;
@@ -10,9 +10,12 @@ body {
     
 }
 
-.selection {
+.selection, .result {
+    display: flex;
+    flex: 1;
     text-align: center;
     justify-content: center;
+    padding: 24px;
 }
 
 .buttons {
