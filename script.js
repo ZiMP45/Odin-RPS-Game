@@ -25,8 +25,15 @@ function playRound(playerSelection, computerSelection) {
     let roundResult = "";
 
     if ((playerSelection == 'ROCK' && computerSelection == 'SCISSORS') ||
+        (playerSelection == 'ROCK' && computerSelection == 'LIZARD') ||
         (playerSelection == 'SCISSORS' && computerSelection == 'PAPER') ||
-        (playerSelection == 'PAPER' && computerSelection == 'ROCK')) {
+        (playerSelection == 'SCISSORS' && computerSelection == 'LIZARD') ||
+        (playerSelection == 'PAPER' && computerSelection == 'ROCK') ||
+        (playerSelection == 'PAPER' && computerSelection == 'SPOCK') ||
+        (playerSelection == 'LIZARD' && computerSelection == 'PAPER') ||
+        (playerSelection == 'LIZARD' && computerSelection == 'SPOCK') ||
+        (playerSelection == 'SPOCK' && computerSelection == 'SCISSORS') ||
+        (playerSelection == 'SPOCK' && computerSelection == 'ROCK')) {
         
         playerScore += 1;
         round += 1;
@@ -66,4 +73,6 @@ buttons.forEach((button) => {
     document.getElementById('rock').disabled = true;
     document.getElementById('paper').disabled = true;
     document.getElementById('scissors').disabled = true;
+    document.getElementById('lizard').disabled = true;
+    document.getElementById('spock').disabled = true;
  }
