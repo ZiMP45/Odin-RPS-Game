@@ -1,5 +1,5 @@
 /* * {
-    border: 1px solid black;
+    border: 1px solid white;
 } */
 
 body {
@@ -31,4 +31,45 @@ button {
     width: 75px;
     height: 75px;
     margin: 24px;
+}
+
+.buttons #rock{
+    background: url(/images/Rock.jpg);
+    width: 224px;
+    height: 224px;
+    background-position: center center;
+    background-size: cover;
+}
+.buttons #paper{
+    background: url(/images/Paper.jpg);
+    width: 224px;
+    height: 224px;
+    background-position: center center;
+    background-size: cover;
+}
+.buttons #scissors{
+    background: url(/images/Scissors.jpg);
+    width: 224px;
+    height: 224px;
+    background-position: center center;
+    background-size: cover;
+}
+.buttons #lizard{
+    background: url(/images/Lizard.jpg);
+    width: 224px;
+    height: 224px;
+    background-position: center center;
+    background-size: cover;
+}
+.buttons #spock{
+    background: url(/images/Spock.jpeg);
+    width: 224px;
+    height: 224px;
+    background-position: center center;
+    background-size: cover;
+}
+
+.buttonOutline {
+    display: flex;
+    flex-direction: column;
 }
