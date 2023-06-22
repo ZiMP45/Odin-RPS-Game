@@ -58,7 +58,14 @@ function playRound(playerSelection, computerSelection) {
 // also checks if the player or computer already has 5 points and if so, they win.
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        alert(playRound(button.value, computerSelection));
+        const container = document.querySelector('.result');
+
+        const outcome = document.createElement('div');
+        outcome.classList.add('outcome');
+        outcome.textContent = (playRound(button.value, computerSelection));
+
+        container.appendChild(outcome);
+
         if (playerScore == 5) {
             disableButtons();
             alert("You won the game!");
