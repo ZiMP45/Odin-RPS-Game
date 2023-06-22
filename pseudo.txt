@@ -31,3 +31,12 @@ function game() {
         // if R vs P, increment counter for winner, same cases for PvS, SvR
     // return scores 
 }
+
+
+// TODO
+// Need to add cases and reformat logic for lizard and spock
+// Add buttons for lizard and spock
+// Add images for buttons instead of buttons
+// Change background color to black
+// Change text to white
+// 
