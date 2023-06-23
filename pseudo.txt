@@ -34,6 +34,4 @@ function game() {
 
 
 // TODO
-// Update output to a counter for each competitor instead of a line of text
 // intro sequence? symbol pops up then moves to position for button
-// ?

@@ -2,6 +2,7 @@ let playerScore = 0;
 let computerScore = 0;
 let computerSelection = getComputerChoice();
 const buttons = document.querySelectorAll('button');
+const container = document.querySelector('.result');
 
 // function to get random choice for computer
 function getComputerChoice() {
@@ -35,20 +36,28 @@ function playRound(playerSelection, computerSelection) {
         (playerSelection == 'SPOCK' && computerSelection == 'ROCK')) {
         
         playerScore += 1;
-        roundResult += "Player score: " + playerScore + " Computer score: " + computerScore;
+        displayRound("You win this one! Make another choice.");
 
     } else if (playerSelection == computerSelection) {
-        roundResult = "Tie. Player score: " + 
-        playerScore + " Computer Score: " + computerScore;
+        displayRound("Tie Game! I feel like I got this!");
     } else {
         computerScore += 1;
-        roundResult = "Player score: " + playerScore + " Computer Score: " + computerScore;
+        displayRound("You lose this one! Maybe your next choice will be luckier");
     }
 
     keepPlayerScore();
     keepComputerScore();
+}
 
-    return roundResult;
+function displayRound (str) {
+    container.animate([{ opacity: 0}, { opacity: 1 }], {
+        duration: 300,
+        fill: "forwards",
+        iterations: 1,
+        delay: 0,
+        easing: "ease-out",
+    });
+    container.textContent = str;
 }
 
 // event listener for five button choices
@@ -72,8 +81,6 @@ buttons.forEach((button) => {
             button.style.border = "2px solid white";
             button.style.boxShadow = "none";
         }
-        
-        const container = document.querySelector('.result');
 
         const outcome = document.createElement('div');
         outcome.classList.add('outcome');
