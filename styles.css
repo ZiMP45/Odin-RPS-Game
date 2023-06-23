@@ -56,7 +56,7 @@ button {
 }
 
 .buttons #rock{
-    background: url(/images/Rock.jpg);
+    background: url(../Odin-RPS-Game/images/Rock.jpg);
     width: 224px;
     height: 224px;
     background-position: center center;
