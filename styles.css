@@ -38,7 +38,6 @@ body {
 .buttons {
     display: flex;
     justify-content: center;
-    padding: auto;
 }
 
 button {
@@ -48,7 +47,7 @@ button {
     height: 75px;
     margin: 24px;
     border-radius: 10px;
-    border: 4px solid white;
+    border: 2px solid white;
 }
 
 .buttons #rock{

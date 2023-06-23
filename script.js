@@ -54,10 +54,28 @@ function playRound(playerSelection, computerSelection) {
     return roundResult;
 }
 
-// event listener for three button choices
+// event listener for five button choices
 // also checks if the player or computer already has 5 points and if so, they win.
+// creates new div with parent result for round outcome text
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
+        
+        button.onclick = transformButton();
+        setTimeout(resetButton, 225);
+
+        function transformButton () {
+            button.style.transform = "scale(0.97)";
+            button.style.transition = "transform 0.2s ease";
+            button.style.border = "4px solid #ffc600";
+            button.style.boxShadow = "0 0 5px 2.5px #ffc600";
+        }
+
+        function resetButton() {
+            button.style.transform = "scale(1.0)";
+            button.style.border = "2px solid white";
+            button.style.boxShadow = "none";
+        }
+        
         const container = document.querySelector('.result');
 
         const outcome = document.createElement('div');
@@ -68,18 +86,19 @@ buttons.forEach((button) => {
 
         if (playerScore == 5) {
             disableButtons();
-            alert("You won the game!");
+            outcome.textContent = "You won the game!"
         } else if (computerScore == 5) {
             disableButtons();
-            alert("Ha! I win the game!");
+            outcome.textContent = "Ha! I win the game!"
         }
     });
-});
+})
 
- function disableButtons () {
+function disableButtons () {
     document.getElementById('rock').disabled = true;
     document.getElementById('paper').disabled = true;
     document.getElementById('scissors').disabled = true;
     document.getElementById('lizard').disabled = true;
     document.getElementById('spock').disabled = true;
- }
+}
+
