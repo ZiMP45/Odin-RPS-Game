@@ -63,28 +63,28 @@ button {
     background-size: cover;
 }
 .buttons #paper{
-    background: url(/images/Paper.jpg);
+    background: url(../Odin-RPS-Game/images/Paper.jpg);
     width: 224px;
     height: 224px;
     background-position: center center;
     background-size: cover;
 }
 .buttons #scissors{
-    background: url(/images/Scissors.jpg);
+    background: url(../Odin-RPS-Game/images/Scissors.jpg);
     width: 224px;
     height: 224px;
     background-position: center center;
     background-size: cover;
 }
 .buttons #lizard{
-    background: url(/images/Lizard.jpg);
+    background: url(../Odin-RPS-Game/images/Lizard.jpg);
     width: 224px;
     height: 224px;
     background-position: center center;
     background-size: cover;
 }
 .buttons #spock{
-    background: url(/images/Spock.jpeg);
+    background: url(../Odin-RPS-Game/images/Spock.jpeg);
     width: 224px;
     height: 224px;
     background-position: center center;
