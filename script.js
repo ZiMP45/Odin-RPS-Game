@@ -82,18 +82,14 @@ buttons.forEach((button) => {
             button.style.boxShadow = "none";
         }
 
-        const outcome = document.createElement('div');
-        outcome.classList.add('outcome');
-        outcome.textContent = (playRound(button.value, computerSelection));
-
-        container.appendChild(outcome);
+        playRound(button.value, computerSelection);
 
         if (playerScore == 5) {
             disableButtons();
-            outcome.textContent = "You won the game!"
+            displayRound("You won the game!");
         } else if (computerScore == 5) {
             disableButtons();
-            outcome.textContent = "Ha! I win the game!"
+            displayRound("Ha! I win the game!");
         }
     });
 })
