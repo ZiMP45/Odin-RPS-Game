@@ -50,6 +50,7 @@ function playRound(playerSelection, computerSelection) {
 
     return roundResult;
 }
+
 // event listener for five button choices
 // also checks if the player or computer already has 5 points and if so, they win.
 // creates new div with parent result for round outcome text
