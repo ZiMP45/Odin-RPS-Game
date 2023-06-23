@@ -91,6 +91,15 @@ button {
     flex-direction: column;
 }
 
+.score {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    font-size: 48px;
+    align-items: center;
+}
+
 .result {
     display: flex;
     flex-direction: column;

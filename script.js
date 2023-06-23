@@ -1,6 +1,5 @@
 let playerScore = 0;
 let computerScore = 0;
-let round = 0;
 let computerSelection = getComputerChoice();
 const buttons = document.querySelectorAll('button');
 
@@ -36,24 +35,21 @@ function playRound(playerSelection, computerSelection) {
         (playerSelection == 'SPOCK' && computerSelection == 'ROCK')) {
         
         playerScore += 1;
-        round += 1;
-        roundResult += "You win this round! I bet you can't do that again! Player score: " + 
-        playerScore + " Computer score: " + computerScore;
+        roundResult += "Player score: " + playerScore + " Computer score: " + computerScore;
 
     } else if (playerSelection == computerSelection) {
-        round += 1;
-        roundResult = "Tie game, You both chose: " + playerSelection + " Player score: " + 
+        roundResult = "Tie. Player score: " + 
         playerScore + " Computer Score: " + computerScore;
     } else {
         computerScore += 1;
-        round += 1;
-        roundResult = "Ha! I win! " + computerSelection + " beats " + playerSelection + 
-        " Player score: " + playerScore + " Computer Score: " + computerScore;
+        roundResult = "Player score: " + playerScore + " Computer Score: " + computerScore;
     }
+
+    keepPlayerScore();
+    keepComputerScore();
 
     return roundResult;
 }
-
 // event listener for five button choices
 // also checks if the player or computer already has 5 points and if so, they win.
 // creates new div with parent result for round outcome text
@@ -61,7 +57,7 @@ buttons.forEach((button) => {
     button.addEventListener('click', () => {
         
         button.onclick = transformButton();
-        setTimeout(resetButton, 225);
+        setTimeout(resetButton, 175);
 
         function transformButton () {
             button.style.transform = "scale(0.97)";
@@ -93,6 +89,34 @@ buttons.forEach((button) => {
         }
     });
 })
+
+function keepPlayerScore () {
+    let playerScoreBox = document.querySelector(".playerScore");
+
+    playerScoreBox.animate([{ opacity: 0 }, {opacity: 1}], {
+        duration: 300,
+        fill: "forwards",
+        iterations: 1,
+        delay: 0,
+        easing: "ease-out",
+    });
+
+    playerScoreBox.textContent = playerScore;
+}
+
+function keepComputerScore () {
+    let computerScoreBox = document.querySelector(".computerScore");
+
+    computerScoreBox.animate([{ opacity: 0 }, {opacity: 1}], {
+        duration: 300,
+        fill: "forwards",
+        iterations: 1,
+        delay: 0,
+        easing: "ease-out",
+    });
+
+    computerScoreBox.textContent = computerScore;
+}
 
 function disableButtons () {
     document.getElementById('rock').disabled = true;
